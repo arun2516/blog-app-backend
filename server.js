@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors')
 const dotenv = require("dotenv");
 dotenv.config();
 const dbconnect = require("./config/db/dbConnect");
@@ -12,6 +13,8 @@ const categoryRoute = require("./route/category/categoryRoute");
 const app = express();
 //DB
 dbconnect();
+
+app.use(cors())
 
 app.get("/",(req,res)=>{
     res.json({msg:"API for blog Application"});
@@ -30,7 +33,7 @@ app.use("/api/posts", postRoute);
 app.use("/api/comments",commentRoutes);
 
 //email msg
-app.use("api/email",emailMsgRoute);
+app.use("/api/email",emailMsgRoute);
 
 //category route
 app.use("/api/category",categoryRoute);
