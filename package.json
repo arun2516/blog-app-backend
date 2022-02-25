@@ -3,13 +3,8 @@
   "version": "1.0.0",
   "description": "Blog Application",
   "main": "server.js",
-<<<<<<< HEAD
-  "engines": {
-    "node": "v16.13.0"
-=======
   "engines":{
     "node":"v16.13.0"
->>>>>>> dcc08e5bbf8e4d4f7c5888de207a27a49f4be6e6
   },
   "scripts": {
     "start": "node server.js"
